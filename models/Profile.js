@@ -83,14 +83,11 @@ education: [
         type: String,
         required: true
     },
-    fieldodstudy: {
+    fieldofstudy: {
         type: String,
         required: true
     },
-    company: {
-        type: String,
-        required: true
-    },
+    
     from: {
         type: Date,
         required: true
