@@ -1,9 +1,9 @@
 import React, { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
 
-//import { connect } from 'react-redux';
-//import PropTypes from 'prop-types';
-//import {login} from '../../actions/auth';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import {login} from '../../actions/auth';
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -63,9 +63,7 @@ const Login = () => {
     </Fragment>
   );
 };
-export default Login;
-
-//Login.propTypes = {
-//login: PropTypes.func.isRequired,
-//}
-//export default connect(null, {login})(Login);
+Login.propTypes = {
+login: PropTypes.func.isRequired,
+}
+export default connect(null, {login})(Login);
