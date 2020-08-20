@@ -8,7 +8,6 @@ const bcrypt = require('bcryptjs');
 const gravatar = require('gravatar');
  
  
-// same as users.js, but instead of signing the user, we will authenticate
 
 router.get('/', auth, async (req, res) => {
     try{
@@ -22,7 +21,6 @@ router.get('/', auth, async (req, res) => {
  
  
 
-// '/' means single route for each one
 
 // @route GET api/auth
 // @desc Authenticate user and get token
@@ -76,7 +74,7 @@ async (req, res) => {
    
     }
     
-    //Return jsonwebtoken(asa user enters pwd in ui, webtoken is needed to rightaway login the user, ) 
+    //Return jsonwebtoken
     const payload = {
         user:{
             id: user.id
