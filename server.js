@@ -17,5 +17,10 @@ app.use('/api/profile', require('./routes/api/profile'));
 app.use('/api/posts', require('./routes/api/posts'));
 
 const PORT = process.env.PORT || 5000;
+process.on('SIGINT', function() {
+    console.log( "\nGracefully shutting down from SIGINT (Ctrl-C)" );
+    // some other closing procedures go here
+    process.exit(1);
+  });
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
