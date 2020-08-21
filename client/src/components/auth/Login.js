@@ -15,15 +15,16 @@ const Login = ({login}) => {
   const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
   const onSubmit = (e) => {
-    e.preventDefault();
-
-    if (name === "admin" && password === "admin1") {
-      console.log("admin logged in");
-    } else {
+    e.preventDefault(); 
+  };
+//redirect if logged in
+  if (name === "admin" && password === "admin1") {
+ console.log("admin logged in");
+    return <Redirect to='/dashboard' />;
+  }
+  else {
       console.log("only admin can log in to this page");
     }
-  };
-
   return (
     <Fragment>
       <h1 className='large text-primary'>Sign In</h1>
