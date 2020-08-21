@@ -1,6 +1,6 @@
 const mongoose = require ('mongoose');
 
-// creating schema for the model, the schema is going to take in the object which we need
+// creating schema 
 const UserSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -10,7 +10,7 @@ const UserSchema = new mongoose.Schema({
     email: {
         type: String,
         required: true,
-        unique: true // no two people should be able to login by same id
+        unique: true 
     },
 
     password: {
