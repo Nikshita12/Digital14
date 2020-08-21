@@ -27,8 +27,6 @@ router.get('/', auth, async (req, res) => {
 // @access PUBLIC
 router.post('/',
 [
-//check all the rules of writing syntax in express-validator documentation.
-
 check('email', 'Please include a valid email').isEmail(),
 
 check('password', 'Password is required').exists()
@@ -61,10 +59,7 @@ async (req, res) => {
         r: 'pg',
         d: 'mm' 
     })
-
-    // bcrypt has a method named compare which atkes a plain text pwd and an encrypted pwd, compares them
-    //  and then tells you if they are matching or not, also compare returns a promise, so await....
-    
+ 
     const isMatch = await bcrypt.compare(password, user.password);
 
     if(!isMatch){
